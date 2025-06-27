@@ -1,0 +1,35 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	height: 100vh;
+	overflow: hidden;
+	display: grid;
+	place-items: center;
+	background: #107074;
+	user-select: none;
+}
+
+#text {
+	font-size: 16vw;
+	font-family: AudioWide, LiSu, sans-serif;
+	color: #fff;
+	transform: skew(15deg);
+	text-align: center;
+	position: relative;
+
+	&::before {
+		--offset: 32px;
+		content: attr(data-text);
+		position: absolute;
+		left: calc(var(--offset) * -1);
+		top: var(--offset);
+		color: rgba(0, 0, 0, 0.3);
+		filter: blur(5px);
+		text-shadow: none;
+		z-index: -1;
+	}
+}
